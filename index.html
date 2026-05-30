@@ -49,9 +49,15 @@
                     <div id="status-area" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-dim);">
                         Waiting for input...
                     </div>
-                    <div id="result-area" style="display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(0,255,0,0.05); border: 1px solid rgba(0,255,0,0.2); border-radius: 12px; text-align: left;">
-                        <div style="font-weight: 600; margin-bottom: 0.5rem;">Result Found:</div>
-                        <a href="#" id="result-link" target="_blank" style="color: var(--secondary); text-decoration: none; word-break: break-all;"></a>
+                    <div id="result-area" style="display: none; margin-top: 1.5rem; padding: 1.25rem; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 16px; text-align: left; position: relative;">
+                        <div style="font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="check-circle" style="color: #10b981; width: 18px;"></i>
+                            Result Found:
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <a href="#" id="result-link" target="_blank" style="color: var(--secondary); text-decoration: none; word-break: break-all; flex: 1; font-family: monospace;"></a>
+                            <button id="copy-btn" class="primary-btn" style="padding: 0.5rem; border-radius: 8px; background: rgba(255,255,255,0.1);"><i data-lucide="copy" style="width: 16px;"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,6 +113,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
     <script>

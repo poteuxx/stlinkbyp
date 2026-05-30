@@ -61,6 +61,78 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Copy to Clipboard
+const copyBtn = document.getElementById('copy-btn');
+copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(resultLink.innerText);
+    const originalIcon = copyBtn.innerHTML;
+    copyBtn.innerHTML = '<i data-lucide="check" style="width: 16px;"></i>';
+    lucide.createIcons();
+    setTimeout(() => {
+        copyBtn.innerHTML = originalIcon;
+        lucide.createIcons();
+    }, 2000);
+});
+
+// Modal Logic
+const overlay = document.getElementById('modal-overlay');
+const modalContent = document.getElementById('modal-content');
+const closeBtn = document.getElementById('modal-close');
+
+const modalData = {
+    support: {
+        title: "Support Center",
+        body: "Need help with a link? Join our official community on Discord or reach out via email at <b>support@solutions-tech.io</b>. Our team typically responds within 24 hours."
+    },
+    privacy: {
+        title: "Privacy Policy",
+        body: "ST·Link Bypass does not store any of your target URLs. We do not use persistent cookies or track your browsing history. Your anonymity is our priority."
+    },
+    terms: {
+        title: "Terms of Service",
+        body: "This tool is provided for educational purposes. Users are responsible for adhering to the terms of service of the websites they interact with."
+    },
+    api: {
+        title: "Developer API",
+        body: "Our high-speed bypass API is available for enterprise integration. Contact our team for API keys and documentation access."
+    }
+};
+
+function showModal(type) {
+    const data = modalData[type];
+    modalContent.innerHTML = `
+        <h2 class="modal-title">${data.title}</h2>
+        <div class="modal-body">${data.body}</div>
+        <button class="primary-btn" style="margin-top: 2rem; width: 100%;" onclick="document.getElementById('modal-overlay').style.display='none'">Got it</button>
+    `;
+    overlay.style.display = 'flex';
+}
+
+// Attach listeners to all relevant links
+document.querySelector('a[href="#"]').addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.innerText.toLowerCase().includes('support')) showModal('support');
+    if (e.target.innerText.toLowerCase().includes('privacy')) showModal('privacy');
+    if (e.target.innerText.toLowerCase().includes('terms')) showModal('terms');
+    if (e.target.innerText.toLowerCase().includes('api')) showModal('api');
+});
+
+// Specifically for the footer links which are multiple
+document.querySelectorAll('footer a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const text = e.target.innerText.toLowerCase();
+        if (modalData[text]) {
+            e.preventDefault();
+            showModal(text);
+        }
+    });
+});
+
+closeBtn.addEventListener('click', () => overlay.style.display = 'none');
+overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.style.display = 'none';
+});
+
 // Add subtle animations to cards on scroll
 const observerOptions = {
     threshold: 0.1
@@ -81,3 +153,4 @@ document.querySelectorAll('.feature-card').forEach(card => {
     card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
     observer.observe(card);
 });
+
