@@ -2,7 +2,7 @@
 
 ![Header](hero_background_abstract_1780184045342.png)
 
-A premium, universal link bypasser reimaging the introduction of `izen.lol` with a high-end, futuristic aesthetic and powerful features.
+A premium, universal link bypasser engineered with a high-end, futuristic aesthetic and powerful extraction features.
 
 ## 🚀 Features
 

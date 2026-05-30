@@ -1,7 +1,6 @@
 # ST·Link Bypass: Reimagined for the Modern Web
 
-> [!NOTE]
-> This project has been reimagined and rebuilt by **Antigravity** based on the core utility of `izen.lol`, elevated with the premium branding of **Poteuxx** and the technical vision of **SolutionsTechnologies**.
+> This project is a cutting-edge utility engineered by **SolutionsTechnologies**, combining premium **Poteuxx** branding with high-performance extraction capabilities.
 
 ## 🌌 Vision & Design Philosophy
 ST·Link Bypass isn't just a tool; it's a statement against the cluttered, ad-heavy experience of modern link sharing. We've taken the functional core of existing link bypassers and wrapped them in a **futuristic, glassmorphic UI** designed to WOW users at first glance.
