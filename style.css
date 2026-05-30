@@ -269,6 +269,7 @@ footer {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Offset for fixed navbar */
 }
 
 /* Modal System */
@@ -284,6 +285,16 @@ html {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+}
+/* More spacing for clarity */
+.platforms {
+    padding: 10rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.features {
+    padding: 12rem 0;
 }
 
 .modal {
