@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST·Link Bypass | The Ultimate Universal Link Bypasser</title>
+    <meta name="description" content="Unlock instant access. Bypass Linkvertise, Work.ink, Lootlabs, and premium key systems with ST·Link Bypass. Zero ads, zero waiting.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="background-layer">
+        <div class="background-glow" id="mouse-glow"></div>
+    </div>
+
+    <nav>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="zap" style="color: white; width: 20px;"></i>
+                    </div>
+                    ST·Link <span class="gradient-text">Bypass</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#supported">Platforms</a>
+                    <a href="https://github.com/poteuxx/stlinkbyp" target="_blank">GitHub</a>
+                    <a href="#" class="primary-btn" style="padding: 0.5rem 1.25rem;">Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>The Future of <br><span class="gradient-text">Instant Access</span></h1>
+                <p>Wave goodbye to surveys, annoying ads, and endless countdowns. ST·Link Bypass reimagines the bypass engine for the modern web.</p>
+                
+                <div class="bypass-box">
+                    <div class="input-wrapper">
+                        <input type="text" id="target-url" placeholder="Paste your Linkvertise, Work.ink, or Key System URL here...">
+                        <button class="primary-btn" id="bypass-trigger">Bypass Now</button>
+                    </div>
+                    <div id="status-area" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-dim);">
+                        Waiting for input...
+                    </div>
+                    <div id="result-area" style="display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(0,255,0,0.05); border: 1px solid rgba(0,255,0,0.2); border-radius: 12px; text-align: left;">
+                        <div style="font-weight: 600; margin-bottom: 0.5rem;">Result Found:</div>
+                        <a href="#" id="result-link" target="_blank" style="color: var(--secondary); text-decoration: none; word-break: break-all;"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="platforms" id="supported">
+            <div class="container">
+                <div class="platform-scroll">
+                    <span class="platform-item">Linkvertise</span>
+                    <span class="platform-item">Work.ink</span>
+                    <span class="platform-item">Lootlabs</span>
+                    <span class="platform-item">Admaven</span>
+                    <span class="platform-item">Platoboost</span>
+                    <span class="platform-item">Codex</span>
+                    <span class="platform-item">Hydrogen</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="font-size: 2.5rem;">Engineered for <span class="gradient-text">Efficiency</span></h2>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Ad-Free Tunnel</h3>
+                        <p>Our proprietary engine tunnels through ad-networks, stripping away trackers and surveys instantly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="key"></i></div>
+                        <h3>Key System Master</h3>
+                        <p>Fully supports major Roblox and software key systems including Codex, Delta, and Hydrogen.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i data-lucide="zap"></i></div>
+                        <h3>Global Speed</h3>
+                        <p>Processed on edge nodes globally to ensure your results are delivered in under 500ms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SolutionsTechnologies. Built with extreme imagination by Poteuxx.</p>
+            <div style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
+                <a href="#" style="color: var(--text-dim); text-decoration: none;">Privacy</a>
+                <a href="#" style="color: var(--text-dim); text-decoration: none;">Terms</a>
+                <a href="#" style="color: var(--text-dim); text-decoration: none;">API</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
