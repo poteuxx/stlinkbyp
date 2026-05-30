@@ -100,6 +100,7 @@ const modalData = {
 
 function showModal(type) {
     const data = modalData[type];
+    if (!data) return;
     modalContent.innerHTML = `
         <h2 class="modal-title">${data.title}</h2>
         <div class="modal-body">${data.body}</div>
@@ -108,22 +109,28 @@ function showModal(type) {
     overlay.style.display = 'flex';
 }
 
-// Attach listeners to all relevant links
-document.querySelector('a[href="#"]').addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.innerText.toLowerCase().includes('support')) showModal('support');
-    if (e.target.innerText.toLowerCase().includes('privacy')) showModal('privacy');
-    if (e.target.innerText.toLowerCase().includes('terms')) showModal('terms');
-    if (e.target.innerText.toLowerCase().includes('api')) showModal('api');
-});
-
-// Specifically for the footer links which are multiple
-document.querySelectorAll('footer a').forEach(link => {
+// Global handler for all interactive links
+document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', (e) => {
-        const text = e.target.innerText.toLowerCase();
-        if (modalData[text]) {
+        const href = link.getAttribute('href');
+        const text = link.innerText.toLowerCase();
+
+        // 1. Handle Modal Links
+        if (href === '#' || href === 'javascript:void(0)') {
             e.preventDefault();
-            showModal(text);
+            if (text.includes('support')) showModal('support');
+            else if (text.includes('privacy')) showModal('privacy');
+            else if (text.includes('terms')) showModal('terms');
+            else if (text.includes('api')) showModal('api');
+        }
+        
+        // 2. Smooth Scroll for Anchor Links (Mobile browsers fallback)
+        if (href && href.startsWith('#') && href.length > 1) {
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     });
 });
