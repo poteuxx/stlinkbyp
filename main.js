@@ -82,7 +82,7 @@ const closeBtn = document.getElementById('modal-close');
 const modalData = {
     support: {
         title: "Support Center",
-        body: "Need help with a link? Join our official community on Discord or reach out via email at <b>support@solutions-tech.io</b>. Our team typically responds within 24 hours."
+        body: "Need help with a link? Join our official community on Discord or reach out via email at <a href='mailto:support@solutions-tech.io' style='color: var(--secondary); text-decoration: underline;'>support@solutions-tech.io</a>. Our team typically responds within 24 hours."
     },
     privacy: {
         title: "Privacy Policy",
